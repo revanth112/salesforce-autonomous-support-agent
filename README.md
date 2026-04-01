@@ -218,4 +218,49 @@ This project was built as a portfolio piece targeting the **Salesforce Forward D
 
 ---
 
+## Streamlit Frontend (Live Demo)
+
+A Python Streamlit app that visually demonstrates the full autonomous agent flow — connecting directly to the FastAPI backend.
+
+### Pages
+
+| Page | Description |
+|------|-------------|
+| 🤖 Agent Simulator | Main page — type a query, watch the agent execute step-by-step |
+| 📦 Order Lookup | View all orders in a dashboard, inspect individual order details |
+| 🚨 Escalation Simulator | Manually trigger escalations, see simulated Salesforce Case creation |
+| 🔍 Agent Trace Log | Decision audit log with timeline view — mirrors `AgentActionLogger.cls` |
+
+### Run Locally
+
+```bash
+# Step 1: Start the FastAPI backend
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+
+# Step 2: In a new terminal, run Streamlit
+cd streamlit
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### Deploy to Streamlit Cloud (Free)
+
+1. Push this repo to GitHub (already done)
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Click **New App**
+4. Set:
+   - **Repository:** `revanth112/salesforce-autonomous-support-agent`
+   - **Branch:** `main`
+   - **Main file path:** `streamlit/app.py`
+5. Click **Deploy**
+
+> Note: For the Streamlit Cloud deployment, update the Backend URL in the sidebar to point to your deployed FastAPI URL (e.g., Railway, Render, or ngrok).
+
+---
+
+*Built by Sunku Venkata Revanth Kumar*
+
+
 *Built by Sunku Venkata Revanth Kumar*
